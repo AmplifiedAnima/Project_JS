@@ -1,44 +1,33 @@
-const allColumns= Array.from(document.getElementsByClassName('col'))
+var tiles = document.querySelectorAll('.tiles');
+
+const Player_x ='X';
+const Player_0 = 'O';
+
+let turn = Player_x
+const boardState = Array(tiles.length);
+
+boardState.fill(null);
 
 
-const bodyChange = document.body
+const strike = document.getElementById('strike');
+const endGame = document.getElementById('Game-finished');
+const endGameText = document.getElementById('Game-finished-text');
+const repeatTheGame = document.getElementById('repeat-the-game');
 
-const columnThree = document.getElementById('col3-id')
-const orderedList = columnThree.children
-let x = document.getElementById('col3-id').querySelectorAll("li")
-let butonik =document.getElementById('col1-id')
+tiles.forEach(tile=> addEventListener('click', tileClick));
 
-
-butonik.addEventListener('click', e=> {
-    if(e.target && e.target.nodeName =='button'){
-        console.log('trafiony' `${e}`)
+function tileClick(event){
+    if(endGame.classList.contains('visible')){
+        return;
     }
-})
-
-
-function changeColor(element){
-    element.style.backgroundColor = 'azure';
+    const tile = event.target;
+    const tileNumber = tile.dataset.index;
+    if(tile.innerText != ''){
+        return;
 }
-
-
-function changeColor2(element){
-    element.style.backgroundColor= 'orange';
-}
-
-
-function changeColor3(element){
-    element.style.backgroundColor= 'black';
-}
-
-
-function changeColor4(element){
-    element.style.color= 'red';
-}
-
-
-allColumns.forEach(changeColor);
-changeColor2(bodyChange);
-
-for (var i = 0; i < x.length; i+=5) {
-    x[i].style.color = "blue";
+    if (turn ===Player_x){
+        tile.innerText = Player_x;
+        boardState[tileNumber-1] = Player_x;
+        turn = Player_0;
+    }
 }
