@@ -12,18 +12,22 @@
 </style>
 
   <body>
-    <div class='container'>
-      <div id='board'>
-        <div data-index='1' class='tile bottom-border right-border'>1</div>
-        <div data-index='2' class='tile bottom-border right-border'>2</div>
-        <div data-index='3' class='tile bottom-border'>3</div>
-        <div data-index='4' class='tile bottom-border right-border'>4</div>
-        <div data-index='5' class='tile bottom-border right-border'>5</div>
-        <div data-index='6' class='tile bottom-border'>6</div>
-        <div data-index='7' class='tile right-border'>7</div>
-        <div data-index='8' class='tile right-border'>8</div>
-        <div data-index='9' class='tile'>9</div>
-      </div>
+   
+    <div id='board'>
+      <div data-index='1' class='tile bottom-border right-border'>X</div>
+      <div data-index='2' class='tile bottom-border right-border'>X</div>
+      <div data-index='3' class='tile bottom-border'>X</div>
+      <div data-index='4' class='tile bottom-border right-border'>X</div>
+      <div data-index='5' class='tile bottom-border right-border'>X</div>
+      <div data-index='6' class='tile bottom-border'>X</div>
+      <div data-index='7' class='tile right-border'>X</div>
+      <div data-index='8' class='tile right-border'>X</div>
+      <div data-index='9' class='tile'>X</div>
+      <div id='strike' class='strike strike-diagonal-2'></div>
+    </div>
+    <div id='Game-finished'>
+      <h3 id='Game-finished-text'> Winner is </h2>
+        <button id='repeat the game'> Play again </button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
